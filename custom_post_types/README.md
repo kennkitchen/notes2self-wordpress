@@ -38,6 +38,7 @@ The arguments for the call can be set up similar to the following:
 $args = array(
         'labels'             => $labels,
         'public'             => true,
+        'menu_icon'          => 'dashicons-book',
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
@@ -58,3 +59,5 @@ Next, call the function to register the post type:
 This should happen in an `init` hook, for example:
 
 `add_action( 'init', __NAMESPACE__.'\\register_my_cpt' );`
+
+See [Wordpress.org: Register Post Type](https://developer.wordpress.org/reference/functions/register_post_type/)

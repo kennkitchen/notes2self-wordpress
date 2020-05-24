@@ -36,3 +36,20 @@ function my_meta_box_html($post) {
     <?php
 }
 ```
+The `save_post` function is not the only option.
+
+```php
+function wporg_save_postdata($post_id)
+{
+    if (array_key_exists('my_field', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_my_meta_key',
+            $_POST['my_field']
+        );
+    }
+}
+add_action('save_post', 'wporg_save_postdata');
+```
+
+See [Wordpress.org: Custom Meta Boxes](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/)
